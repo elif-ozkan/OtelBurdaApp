@@ -1,0 +1,12 @@
+<h1><%= otel.isim %></h1>
+<p><%= otel.açıklama %></p>
+
+<h2>Yorumlar</h2>
+<ul>
+  <% yorumlar.forEach(function(yorum) { %>
+    <li>
+      <strong>Kullanıcı:</strong> <%= yorum.kullanıcı_ID %> <!-- Kullanıcı adı veya ID -->
+      <p><%= yorum.yorum %></p>
+    </li>
+  <% }); %>
+</ul>

@@ -1,0 +1,22 @@
+version: "3"
+services:
+  web-app:
+    image: otelapp:project
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql-db
+    environment:
+      MYSQL_HOST: localhost
+      MYSQL_PORT: 3307
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DATABASE: otelapp
+
+  mysql-db:
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: otelapp
